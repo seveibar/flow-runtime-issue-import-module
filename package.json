@@ -1,0 +1,35 @@
+{
+  "name": "flow-runtime-issue",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d dist",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "animals": "file:animals",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-plugin-flow-runtime": "^0.5.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0"
+  },
+  "babel": {
+    "presets": [
+      "stage-1"
+    ],
+    "plugins": [
+      [
+        "transform-flow-strip-types"
+      ],
+      [
+        "flow-runtime"
+      ],
+      [
+        "transform-es2015-modules-commonjs"
+      ]
+    ]
+  }
+}
